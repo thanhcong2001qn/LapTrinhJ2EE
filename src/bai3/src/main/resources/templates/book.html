@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>List book</h1>
+    <h2><a href = "/books/add">Add book</a></h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td>
+                <button><a th:href="@{'/books/edit/' + ${book.id}}" style="text-decoration: none;color: black">Edit</a></button>
+                <form th:action="@{/books/delete/{id}(id=${book.id})}" method="post" style="display:inline;">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
