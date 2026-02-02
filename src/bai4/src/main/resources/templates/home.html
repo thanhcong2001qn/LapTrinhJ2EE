@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h2 style="color: #2c3e50; margin-bottom: 20px;">Trang chủ phần mềm quản lý sản phẩm</h2>
+
+    <div style="margin-top: 20px; line-height: 1.8;">
+        <p style="font-size: 16px; color: #555;">Chào mừng bạn đến với hệ thống quản lý sản phẩm!</p>
+
+        <div style="margin-top: 20px; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">Chức năng hệ thống:</h3>
+            <ul style="list-style-position: inside; color: #555;">
+                <li style="margin-bottom: 10px;">Xem danh sách sản phẩm</li>
+                <li style="margin-bottom: 10px;">Thêm sản phẩm mới với validation</li>
+                <li style="margin-bottom: 10px;">Chỉnh sửa thông tin sản phẩm</li>
+                <li style="margin-bottom: 10px;">Xóa sản phẩm</li>
+                <li style="margin-bottom: 10px;">Upload và quản lý hình ảnh sản phẩm</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center;">
+            <a th:href="@{/products}"
+               style="display: inline-block; padding: 12px 30px; background-color: #007bff; color: white;
+                          text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;"
+               onmouseover="this.style.backgroundColor='#0056b3'"
+               onmouseout="this.style.backgroundColor='#007bff'">
+                Xem danh sách sản phẩm
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
